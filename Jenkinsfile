@@ -9,7 +9,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             sh 'npm install rimraf -g'
           }
@@ -28,7 +28,7 @@ pipeline {
 
         stage('Angular Test') {
           steps {
-            sh 'npm run cleanup && npm run webpack:build:main'
+            sh 'npm run cleanup && npm run webpack:build'
           }
         }
 
