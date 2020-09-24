@@ -18,7 +18,7 @@ pipeline {
       }
     }
         
-    stage('Test') {
+    stage('Angular Test') {
       steps {
         sh 'npm test'
       }
