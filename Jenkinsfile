@@ -1,12 +1,11 @@
 pipeline {
   agent any
-  stages {
-    stage('Tools') {
-      steps {
-        tool 'Maven'
-      }
-    }
-
+  tools {
+        maven "Maven"
+        nodejs "NodeJS"
+   }
+  
+    stages {
     stage('Pull') {
       steps {
         git(url: 'https://github.com/vvishal0812/great-big-example-application.git', branch: 'master', poll: true)
