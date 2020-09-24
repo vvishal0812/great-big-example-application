@@ -7,9 +7,20 @@ pipeline {
       }
     }
 
-    stage('Angular Test') {
-      steps {
-        sh 'npm install'
+    stage('Test') {
+      parallel {
+        stage('Java Test') {
+          steps {
+            sh 'mvn test'
+          }
+        }
+
+        stage('Angular Test') {
+          steps {
+            sh 'npm install'
+          }
+        }
+
       }
     }
 
