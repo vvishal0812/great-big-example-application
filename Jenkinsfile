@@ -5,13 +5,12 @@ pipeline {
         }
   }
     
-   tools {
-        maven "Maven"
-        nodejs "NodeJS"
-       docker "Docker"
-    }
-    
   stages {
+     stage('Initialize'){
+        def dockerHome = tool 'Docker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
+      
     stage('Pull') {
       steps {
         git(url: 'https://github.com/vvishal0812/great-big-example-application.git', branch: 'master', poll: true)
