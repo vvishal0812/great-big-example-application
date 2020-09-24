@@ -4,6 +4,13 @@ pipeline {
             image 'maven:3-alpine'  
         }
   }
+    
+   tools {
+        maven "Maven"
+        nodejs "NodeJS"
+       docker "Docker"
+    }
+    
   stages {
     stage('Pull') {
       steps {
