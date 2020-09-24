@@ -12,11 +12,11 @@ pipeline {
       }
     }
 
-    stage('Test') {
-      steps {
-        sh 'mvn test'
-      }
-    }
+//    stage('Test') {
+//      steps {
+//        sh 'mvn test'
+//      }
+//    }
         
     stage('Angular Test') {
       steps {
