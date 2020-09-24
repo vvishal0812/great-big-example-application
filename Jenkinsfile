@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('Pull') {
-      steps {
-        git(url: 'https://github.com/vvishal0812/great-big-example-application.git', branch: 'master', poll: true)
+      parallel {
+        stage('Pull') {
+          steps {
+            git(url: 'https://github.com/vvishal0812/great-big-example-application.git', branch: 'master', poll: true)
+          }
+        }
+
+        stage('') {
+          steps {
+            sh 'npm install rimraf -g'
+          }
+        }
+
       }
     }
 
