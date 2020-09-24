@@ -28,7 +28,7 @@ pipeline {
 
         stage('Angular Test') {
           steps {
-            sh 'npm run webpack:build:dev'
+            sh 'npm install'
           }
         }
 
