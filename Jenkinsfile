@@ -20,7 +20,7 @@ pipeline {
         
     stage('Angular Test') {
       steps {
-        sh 'npm test'
+        sh 'npm install'
       }
     }
 
